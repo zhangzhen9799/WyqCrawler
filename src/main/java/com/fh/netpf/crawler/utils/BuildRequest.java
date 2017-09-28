@@ -70,8 +70,8 @@ public class BuildRequest {
         param.put("zhaiyaoShow", "1");
         param.put("duplicateShow", "0");
         param.put("paixu", "2");
-		Date date = new Date();
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+	Date date = new Date();
+	DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         param.put("endtime", df.format(date) + " 23:59:59");
         param.put("starttime", df.format(date) + " 00:00:00");
         param.put("clickFilterOrigina", "2");
@@ -122,8 +122,8 @@ public class BuildRequest {
         param.put("duplicateShow", "0");
         param.put("paixu", "2");
         param.put("highLightKeywords", "");
-		Date date = new Date();
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+	Date date = new Date();
+	DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         param.put("endtime", df.format(date) + " 23:59:59");
         param.put("starttime", df.format(date) + " 00:00:00");
         param.put("clickFilterOrigina", "-1");
