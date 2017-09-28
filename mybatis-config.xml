@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 配置configuration -->
+<configuration>
+    <!-- 加载配置文件 -->
+    <!--<properties resource="jdbc.properties"></properties>-->
+    <!-- 输出SQL语句 -->
+    <settings>
+        <!--标准输出-->
+        <!--<setting name="logImpl" value="STDOUT_LOGGING"/>-->
+        <!--log4j2输出-->
+        <setting name="logImpl" value="LOG4J2"/>
+    </settings>
+    <!-- <settings> <setting name="useGeneratedKeys" value="true" /> </settings> -->
+    <!-- 定义具体的别名 -->
+    <typeAliases>
+        <!-- package这个包下的所有的实体类的别名为其类名 -->
+        <package name="com.fh.netpf.crawler.entity"/>
+    </typeAliases>
+
+    <!-- 多个环境，如开发环境，正式环境等 -->
+    <environments default="development">
+        <!-- 定义development环境 -->
+        <environment id="development">
+            <!-- 事务管理的类型JDBC和MANAGED（容器管理模式） -->
+            <transactionManager type="MANAGED"/>
+
+            <!-- 数据源配置 UNPOOLED：开一个，用完后关闭 POOLED：数据库连接池 JNDI：JNDI的数据源 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/wyq_db" />
+                <property name="username" value="root" />
+                <property name="password" value="11112222" />
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+
+        <!-- 注册映射接口 -->
+        <mapper class="com.fh.netpf.crawler.mapper.AccountMapper"/>
+        <mapper class="com.fh.netpf.crawler.mapper.KeywordMapper"/>
+        <mapper class="com.fh.netpf.crawler.mapper.ContentMapper"/>
+
+    </mappers>
+</configuration>
