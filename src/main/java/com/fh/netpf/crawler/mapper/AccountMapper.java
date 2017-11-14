@@ -9,16 +9,16 @@ import java.util.List;
 
 public interface AccountMapper {
 
-    @Select("SELECT * from account WHERE loginstatus = 1")
+    @Select("SELECT * FROM account WHERE loginstatus = 1")
     List<Account> getLoginAccount();
 
-    @Select("SELECT * from account WHERE loginstatus = 1 AND status = #{status}")
+    @Select("SELECT * FROM account WHERE loginstatus = 1 AND status = #{status}")
     List<Account> getLoginAccountByStatus(@Param("status") int status);
 
-    @Select("SELECT * from account WHERE loginstatus = 0")
+    @Select("SELECT * FROM account WHERE loginstatus = 0")
     List<Account> getNotLoginAccount();
 
-    @Select("SELECT * from account WHERE loginstatus = 1 AND status = #{status}")
+    @Select("SELECT * FROM account WHERE loginstatus = 1 AND status = #{status}")
     List<Account> getNotLoginAccountByStatus(@Param("status") int status);
 
     @Update("UPDATE account SET cookie=#{cookie},createtime=#{createtime},lastlogintime=#{lastlogintime},loginstatus=#{loginstatus},status=#{status} WHERE id=#{id}")
